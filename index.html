@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Menu</title>
+    
+    <style>
+        body {
+            background-color: #f0f0f0;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .food-box {
+            border: 5px solid black;
+            background-color: white;
+            width: 200px;
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            vertical-align: top;
+        }
+        img {
+            width: 150px;
+            height: 120px;
+            border: 1px solid gray;
+            object-fit: cover;
+        }
+        h1 {
+            color: blue;
+            text-decoration: underline;
+        }
+        #total-area {
+            font-size: 30px;
+            background-color: yellow;
+            display: inline-block;
+            padding: 10px;
+            margin-top: 20px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>WELCOME TO THE CAFE</h1>
+    <p>Select your food below:</p>
+
+    <div class="food-box">
+        <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=150">
+        <h3>Hot Coffee</h3>
+        <p>Price: $3</p>
+        <button onclick="buy(3)">Buy Coffee</button>
+    </div>
+
+    <div class="food-box">
+        <img src="https://images.pexels.com/photos/3338681/pexels-photo-3338681.jpeg?auto=compress&cs=tinysrgb&w=150">
+        <h3>Sweet Donut</h3>
+        <p>Price: $2</p>
+        <button onclick="buy(2)">Buy Donut</button>
+    </div>
+
+    <div class="food-box">
+        <img src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=150">
+        <h3>Pizza Slice</h3>
+        <p>Price: $5</p>
+        <button onclick="buy(5)">Buy Pizza</button>
+    </div>
+
+    <div class="food-box">
+        <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=150">
+        <h3>Burger</h3>
+        <p>Price: $6</p>
+        <button onclick="buy(6)">Buy Burger</button>
+    </div>
+
+    <div class="food-box">
+        <img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=150">
+        <h3>French Fries</h3>
+        <p>Price: $4</p>
+        <button onclick="buy(4)">Buy Fries</button>
+    </div>
+
+    <div class="food-box">
+        <img src="https://images.pexels.com/photos/2144112/pexels-photo-2144112.jpeg?auto=compress&cs=tinysrgb&w=150">
+        <h3>Chocolate Cake</h3>
+        <p>Price: $4</p>
+        <button onclick="buy(4)">Buy Cake</button>
+    </div>
+
+    <br>
+
+    <div id="total-area">
+        Total Bill: $<span id="money">0</span>
+    </div>
+
+    <br><br>
+    <button onclick="reset()">Clear Everything</button>
+
+    <script>
+        var total = 0;
+
+        function buy(price) {
+            total = total + price;
+            document.getElementById("money").innerHTML = total;
+        }
+
+        function reset() {
+            total = 0;
+            document.getElementById("money").innerHTML = total;
+        }
+    </script>
+
+</body>
+</html>
